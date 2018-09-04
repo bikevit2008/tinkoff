@@ -42,17 +42,17 @@ const allPerimeters = (points) => {
     const { length } = points;
     let perimeters = [];
     for (let A = 0; A < length; A++){
-        const pointA = new Point(points[A]);
+        const pointA = points[A];
 
         for (let B = 0; B < length; B++) {
-            const pointB = new Point(points[B]);
+            const pointB = points[B];
             if(B !== A){
-                const pointB = new Point(points[B]);
+                const pointB = points[B];
 
                 for (let C = 0; C < length; C++) {
                     if(C !== A && C !== B){
-                        const pointC = new Point(points[C]);
-                        const triangle = new Triangle(A, B, C);
+                        const pointC = points[C];
+                        const triangle = new Triangle(pointA, pointB, pointC);
                         const perimeter = triangle.perimeter();
                         perimeters.push(perimeter);
                     }
